@@ -20,10 +20,72 @@
         <div class="Main">
             <centre><h1>Welcome to AJR Foundations</h1></centre>
         </div>
+
+        <div class="form-container">
+    <form action="save.php" method="POST">
+      <h2>Registration Form</h2>
+
+      <div class="form-group">
+        <label for="fname">First Name <span class="required">*</span></label>
+        <input type="text" id="fname" name="fname" placeholder="John" required>
+      </div>
+
+      <div class="form-group">
+        <label for="lname">Last Name <span class="required">*</span></label>
+        <input type="text" id="lname" name="lname" placeholder="Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" 
+            placeholder="07X XXX XXXX" pattern="07[0-9]{8}"required>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" placeholder="mm/dd/yyyy" required>
+      </div>
+
+     <div class="form-group">
+        <label for="province">Province:</label>
+        <select id="province" name="province" required>
+          <option value="">Choose Province</option>
+          <option value="Central">Central</option>
+          <option value="Eastern">Eastern</option>
+          <option value="Northern">Northern</option>
+          <option value="North Central">North Central</option>
+          <option value="North Western">North Western</option>
+          <option value="Sabaragamuwa">Sabaragamuwa</option>
+          <option value="Southern">Southern</option>
+          <option value="Western">Western</option>
+          <option value="Uva">Uva</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="district">District:</label>
+        <select id="district" name="district" required>
+          <option value="">Choose District</option>
+        </select>
+      </div>
+
+      <div class="button-group">
+        <button type="reset" class="reset-btn">Reset</button>
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+
+    </form>
+        </div>
           <!-- Footer -->
     <footer>
         © 2026 My Website | All Rights Reserved
     </footer>
     
+    <script src="script.js"></script>
     </body>
 </html>
