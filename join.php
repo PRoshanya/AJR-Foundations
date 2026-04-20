@@ -1,3 +1,37 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "AJR_database";
+
+$conn = new mysqli($servername,$username,$password,$dbname);
+
+//check connection
+if ($conn->connect_error){
+  die("Connection Failed: " . $conn->connect_error);
+  }
+
+  //Handle form submission
+  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    
+  $fname = $_POST['fname'];
+  $lname = $_POST['lname'];
+  $email = $_POST['email'];
+  $phone = $POST['phone'];
+
+    $stmt = $conn->prepare("INSERT INTO users (name, email, phone) VALUE(?,?,?)");
+    $stmt->bind_param("sss",$name,$email,$phone);
+
+    if ($stmt->execute()){
+        echo "<p style='color:green;'>Error: " . $stmt->error . "</p>">;
+    } else {
+        echo "<p style ='color:red;'> Error: " . $stmt->error . "</p>";
+
+    }
+    $stmt->close();
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +82,7 @@
 
       <div class="form-group">
         <label for="dob">Date of Birth</label>
-        <input type="date" id="dob" name="dob" placeholder="mm/dd/yyyy" required>
+        <input type="date" id="dob" name="dob" placeholder="dd/mm/yyyy" required>
       </div>
 
      <div class="form-group">
@@ -67,10 +101,7 @@
         </select>
       </div>
 
-      <div class="form-group">
-        <label for="district">District:</label>
-        <select id="district" name="district" required>
-          <option value="">Choose District</option>
+
         </select>
       </div>
 
@@ -86,6 +117,6 @@
         © 2026 My Website | All Rights Reserved
     </footer>
     
-    <script src="script.js"></script>
+     
     </body>
 </html>
