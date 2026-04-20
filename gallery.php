@@ -9,7 +9,7 @@
         <!--Menu Bar-->
         <div class="navbar">
             <a href="index.php">Home</a>
-            <a href="services.html">Services</a>
+            <a href="services.php">Services</a>
             <a href="gallery.php" class="active">Gallery</a>
             <a href="join.php">Join Us</a>
             <a href="about.php">About</a>
