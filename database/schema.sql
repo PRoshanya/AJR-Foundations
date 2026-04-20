@@ -1,10 +1,9 @@
-CREATE DATABASE IF NOT EXISTS ajr-foundations;
-
-USE ajr-foundations;
+CREATE DATABASE IF NOT EXISTS ajr-database;
+USE ajr-database;
 
 DROP TABLE IF EXISTS users;
 
-CREATE TABLE newusers (
+CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     f_name VARCHAR(50) NOT NULL,
     l_name VARCHAR(50) NOT NULL,
@@ -12,6 +11,6 @@ CREATE TABLE newusers (
     phone VARCHAR(10) NOT NULL,
     dob DATE,
     province VARCHAR(50),
-    district VARCHAR(50),
+
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
