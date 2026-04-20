@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $district = $_POST['district'] ?? '';
 
 
-    // Phone validation (Sri Lanka 07xxxxxxxx)
+    // Phone validation 
     if (!preg_match("/^07[0-9]{8}$/", $phone)) {
         $error_message = "Enter valid 10-digit phone number starting with 07";
     } elseif (empty($fname) || empty($lname) || empty($email)) {
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $full_name = $fname . ' ' . $lname;
 
-        $stmt = $conn->prepare("INSERT INTO users (full_name, email, phone, dob, province, district) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO users (f_name, l_name, email, phone, dob, province, district) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("sssss", $fname, $lname, $email, $phone, $dob, $province, $district);
 
         if ($stmt->execute()) {
