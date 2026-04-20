@@ -1,12 +1,15 @@
-CREATE DATABASE AJR_database;
+CREATE DATABASE IF NOT EXISTS ajr-foundations;
 
-USE AJR_database;
+USE ajr-foundations;
+
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(100) NOT NULL,
-    second_name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    full_name VARCHAR(200) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     phone VARCHAR(10) NOT NULL,
+    dob DATE,
+    province VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
