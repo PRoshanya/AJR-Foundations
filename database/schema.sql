@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS ajr-database;
-USE ajr-database;
+CREATE DATABASE IF NOT EXISTS ajrfoundations;
+USE ajrfoundations;
 
 DROP TABLE IF EXISTS users;
 
